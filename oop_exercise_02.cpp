@@ -1,3 +1,4 @@
+// Written by VSNelyubin, m80-206b-19, Original Code, do not steal!
 #include <iostream>
 #include <fstream>
 #include <string>
