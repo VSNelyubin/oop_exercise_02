@@ -99,11 +99,21 @@ int main(){
     BitString tst1,tst2,tst3;
     infile.open (filename);
     getline(infile,filename);
-    cout<<filename<<"\n";
+    //cout<<filename<<"\n";
+    if(filename.find_first_not_of("01")!=-1){
+        infile.close();
+        cout<<"\nBad input\n";
+        return 0;
+    }
     a=stoull(filename.substr(0,sizeof(a)*8),NULL,2);
     b=stoull(filename.substr(sizeof(a)*8,sizeof(b)*8),NULL,2);
     tst1.setData(a,b);
     getline(infile,filename);
+    if(filename.find_first_not_of("01")!=-1){
+        infile.close();
+        cout<<"\nBad input\n";
+        return 0;
+    }
     a=stoull(filename.substr(0,sizeof(a)*8),NULL,2);
     b=stoull(filename.substr(sizeof(a)*8,sizeof(b)*8),NULL,2);
     tst2.setData(a,b);
